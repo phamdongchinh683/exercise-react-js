@@ -1,7 +1,3 @@
-export const totalArray = () => {
-  return;
-};
-
 export const evenOdd = (array) => {
   let even = [];
   let odd = [];

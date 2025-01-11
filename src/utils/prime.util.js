@@ -1,32 +1,15 @@
 export const checkPrime = (n) => {
-  let flag = true;
-  if (n < 2) {
-    flag = false;
-  } else {
-    for (let i = 2; i < n - 1; i++) {
-      if (n % i === 0) {
-        flag = false;
-        break;
-      }
-    }
+  if (n < 2) return false;
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) return false;
   }
-
-  if (flag === true) {
-    return "it is prime";
-  } else {
-    return "it not prime";
-  }
+  return true;
 };
 
-export const displayPrimeSmaller1000 = () => {
-  const isPrimes = [];
-  const isNotPrimes = [];
-  for (let i = 2; i < 1000; i++) {
+export const displayPrimeSmaller10000 = () => {
+  for (let i = 2; i < 10000; i++) {
     if (checkPrime(i)) {
-      isPrimes.push(i);
-    } else {
-      isNotPrimes.push(i);
+      console.log(i);
     }
   }
-  return isPrimes;
 };
